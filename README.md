@@ -19,3 +19,7 @@ git clone https://AndorChen@github.com/AndorChen/dotfiles.git && cd dotfiles && 
 ```bash
 ./bootstrap.sh
 ```
+
+##介绍
+
+###[.inputrc](http://tldp.org/LDP/lfs/LFS-BOOK-6.1.1-HTML/chapter07/inputrc.html)

@@ -1,7 +1,10 @@
+; You should setup remote config manually
+; eg. user.name, user.email, github.user
+
 [apply]
 	whitespace = fix
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [color]
@@ -21,15 +24,3 @@
 	untracked = cyan
 [merge]
 	log = true
-[url "git@github.com:"]
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-	insteadOf = "github:"
-[url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-	insteadOf = "gist:"
