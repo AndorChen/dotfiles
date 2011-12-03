@@ -1,0 +1,31 @@
+" remove trailing space on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" default theme: Railscasts2
+colors railscasts2
+
+" font name and size
+set guifont=Menlo:h13
+set guifontwide=Microsoft\ YaHei\ Mono:h13
+
+" give the 80th column a colorful line
+set cc=80
+
+" turn on soft wrap
+"set wrap
+
+" give some indent when wrapped
+let &showbreak=repeat(' ', 14)
+
+" set the window width and height
+set columns=90
+set lines=40
+
+" set the default file encoding to utf-8
+set fileencodings=utf-8
+
+" start scrolling three lines befor the horizontal window border
+set scrolloff=3
+
+" don't show the intro message when starting mvim
+set shortmess=atI
