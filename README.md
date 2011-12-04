@@ -3,21 +3,15 @@
 ##安装
 
 ```bash
-git clone https://AndorChen@github.com/AndorChen/dotfiles.git && cd dotfiles && ./bootstrap.sh
+git clone https://AndorChen@github.com/AndorChen/dotfiles.git
+cd dotfiles
+rake install
 ```
 
 新安装的 Mac，可以执行以下命令设置一些系统级的设定：
 
 ```bash
-./.osx
-```
-
-##升级
-
-进入本地的 repo，执行以下命令：
-
-```bash
-./bootstrap.sh
+osx_defaults.sh
 ```
 
 ##介绍
