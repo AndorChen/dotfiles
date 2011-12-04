@@ -23,3 +23,5 @@ git clone https://AndorChen@github.com/AndorChen/dotfiles.git && cd dotfiles && 
 ##介绍
 
 ###[.inputrc](http://tldp.org/LDP/lfs/LFS-BOOK-6.1.1-HTML/chapter07/inputrc.html)
+
+###[.janus.rake](https://github.com/carlhuda/janus#readme)
