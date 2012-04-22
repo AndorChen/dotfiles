@@ -12,5 +12,9 @@ shopt -s nocaseglob
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
-# Force load the profile, and this should be at the very last of this file
-source ".profile"
+# Force load the profile
+source "$HOME/.profile"
+
+# For rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

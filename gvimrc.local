@@ -11,13 +11,13 @@ set guifontwide=Microsoft\ YaHei\ Mono:h13
 " give the 80th column a colorful line
 set cc=80
 
-" turn on soft wrap
-"set wrap
+" turn off soft wrap
+set nowrap
 
 " give some indent when wrapped
-let &showbreak=repeat(' ', 14)
+"let &showbreak=repeat(' ', 4)
 
-" set the window width and height
+" set the window width and height at start
 set columns=90
 set lines=40
 
