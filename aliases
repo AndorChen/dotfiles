@@ -46,6 +46,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # Shortcuts
 alias d="cd ~/Documents"
 alias p="cd ~/Projects"
+alias suby="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User"
 
 # File size
 alias fs="stat -f \"%z bytes\""
