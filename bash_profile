@@ -18,3 +18,6 @@ source "$HOME/.profile"
 # For rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# For Bunlder to open gem
+export BUNDLER_EDITOR=sublime
