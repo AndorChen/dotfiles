@@ -84,7 +84,3 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 # PostgreSQL
 alias start-psql="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias stop-psql="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-
-# DNSMasq
-alias start-dnsmasq="sudo launchctl start homebrew.mxcl.dnsmasq"
-alias stop-dnsmasq="sudo launchctl stop homebrew.mxcl.dnsmasq"
