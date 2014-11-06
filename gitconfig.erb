@@ -5,28 +5,28 @@
   user = <%= print("Github Username:"); STDOUT.flush; STDIN.gets.chomp %>
   token = <%= print("Github API Token:"); STDOUT.flush; STDIN.gets.chomp %>
 [apply]
-	whitespace = fix
+  whitespace = fix
 [core]
-	excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes
-	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+  excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes
+  whitespace = fix,space-before-tab,tab-in-indent,trailing-space
   autocrlf = false
 [color]
-	ui = auto
+  ui = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+  added = yellow
+  changed = green
+  untracked = cyan
 [merge]
-	log = true
+  log = true
 [push]
   default = matching
