@@ -8,37 +8,60 @@ LIGHT_GREEN="\[\033[1;32m\]"
  LIGHT_GRAY="\[\033[0;37m\]"
  COLOR_NONE="\[\e[0m\]"
 
-function parse_git_branch {
+function prompt_git() {
+  local s='';
+  local branchName='';
 
-  git rev-parse --git-dir &> /dev/null
-  git_status="$(git status 2> /dev/null)"
-  branch_pattern="^# On branch ([^${IFS}]*)"
-  remote_pattern="# Your branch is (.*) of"
-  diverge_pattern="# Your branch and (.*) have diverged"
-  if [[ ! ${git_status} =~ "working directory clean" ]]; then
-    state="${RED}⚡"
-  fi
-  # add an else if or two here if you want to get more specific
-  if [[ ${git_status} =~ ${remote_pattern} ]]; then
-    if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
-      remote="${YELLOW}↑"
-    else
-      remote="${YELLOW}↓"
-    fi
-  fi
-  if [[ ${git_status} =~ ${diverge_pattern} ]]; then
-    remote="${YELLOW}↕"
-  fi
-  if [[ ${git_status} =~ ${branch_pattern} ]]; then
-    branch=${BASH_REMATCH[1]}
-    echo " (${branch})${remote}${state}"
-  fi
+  # Check if the current directory is in a Git repository.
+  if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
+
+    # check if the current directory is in .git before running git checks
+    if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
+
+      # Ensure the index is up to date.
+      git update-index --really-refresh -q &>/dev/null;
+
+      # Check for uncommitted changes in the index.
+      if ! $(git diff --quiet --ignore-submodules --cached); then
+        s+='+';
+      fi;
+
+      # Check for unstaged changes.
+      if ! $(git diff-files --quiet --ignore-submodules --); then
+        s+='!';
+      fi;
+
+      # Check for untracked files.
+      if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+        s+='?';
+      fi;
+
+      # Check for stashed files.
+      if $(git rev-parse --verify refs/stash &>/dev/null); then
+        s+='$';
+      fi;
+
+    fi;
+
+    # Get the short symbolic ref.
+    # If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
+    # Otherwise, just give up.
+    branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+      git rev-parse --short HEAD 2> /dev/null || \
+      echo '(unknown)')";
+
+    [ -n "${s}" ] && s="${s}";
+
+    echo -e " ${1}(${branchName}${BLUE}${s}${GREEN})";
+  else
+    return;
+  fi;
 }
 
 function prompt_func() {
     previous_return_value=$?;
     # prompt="${TITLEBAR}$BLUE[$RED\w$GREEN$(__git_ps1)$YELLOW$(git_dirty_flag)$BLUE]$COLOR_NONE "
-    prompt="${TITLEBAR}${BLUE}[${RED}\w${GREEN}$(parse_git_branch)${BLUE}]${COLOR_NONE} "
+    prompt="${TITLEBAR}${BLUE}[${RED}\w${GREEN}$(prompt_git)${BLUE}]${COLOR_NONE} "
 
     PS1="${prompt}$ "
 }
