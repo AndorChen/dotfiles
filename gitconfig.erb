@@ -4,6 +4,8 @@
 [github]
   user = <%= print("Github Username:"); STDOUT.flush; STDIN.gets.chomp %>
   token = <%= print("Github API Token:"); STDOUT.flush; STDIN.gets.chomp %>
+[alias]
+  uncommit=reset HEAD^ # undo last commit, and keep all changes
 [apply]
   whitespace = fix
 [core]
