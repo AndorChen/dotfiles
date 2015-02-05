@@ -21,3 +21,8 @@ eval "$(rbenv init -)"
 
 # For Bunlder to open gem
 export BUNDLER_EDITOR=sublime
+
+# For go lang
+export GOPATH="$HOME/Projects/go"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:/usr/local/opt/go/libexec/bin"
