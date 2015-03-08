@@ -26,3 +26,7 @@ export BUNDLER_EDITOR=sublime
 export GOPATH="$HOME/Projects/go"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+
+# For OpenOffice
+# Create symbolic link DOES NOT work, so export it
+export PATH="$PATH:/Applications/OpenOffice.app/Contents/MacOS"
