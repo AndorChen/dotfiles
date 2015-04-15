@@ -30,3 +30,6 @@ export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 # For LibreOffice
 # Create symbolic link DOES NOT work, so export it
 export PATH="$PATH:/Applications/LibreOffice.app/Contents/MacOS"
+
+# For nvm
+source ~/.nvm/nvm.sh
