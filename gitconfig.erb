@@ -6,6 +6,11 @@
   token = <%= print("Github API Token:"); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
   uncommit=reset HEAD^ # undo last commit, and keep all changes
+
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
 [apply]
   whitespace = fix
 [core]
