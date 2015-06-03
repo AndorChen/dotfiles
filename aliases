@@ -25,7 +25,7 @@ alias whois="whois -h whois-servers.net"
 alias flush="dscacheutil -flushcache"
 
 # Flush DNS cache
-alias dns_flush=sudo discoveryutil udnsflushcaches
+alias dns_flush="sudo discoveryutil udnsflushcaches"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
