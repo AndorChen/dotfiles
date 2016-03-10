@@ -3,9 +3,7 @@
 gem: --no-ri --no-rdoc
 :update_sources: true
 :sources:
-- http://rubygems.org
-- http://gems.rubyforge.org
-- http://gems.github.com
+- https://gems.ruby-china.org/
 :backtrace: false
 :bulk_threshold: 1000
 :benchmark: false
